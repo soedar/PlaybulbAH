@@ -10,6 +10,7 @@
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
+const NSTimeInterval GAME_DURATION = 5;
 
 typedef enum {
     BoxStateEmpty,
@@ -21,7 +22,8 @@ typedef enum {
 
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttonList;
 @property (nonatomic) CGFloat tickDuration;
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *tickTimer;
+@property (nonatomic, strong) NSTimer *gameTimer;
 @property (nonatomic) int targetIndex;
 @property (nonatomic) int targetTicksRemaining;
 
@@ -33,6 +35,10 @@ typedef enum {
 @property (nonatomic) int blueCount;
 @property (nonatomic, weak) IBOutlet UILabel *redLabel;
 @property (nonatomic, weak) IBOutlet UILabel *blueLabel;
+
+
+@property (nonatomic) NSTimeInterval timeLeft;
+@property (nonatomic, weak) IBOutlet UILabel *gameTimerLabel;
 
 @end
 
@@ -53,17 +59,50 @@ typedef enum {
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-   
-    self.redLabel.text = @"0";
-    self.blueLabel.text = @"0";
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
+    [self startGame];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) startGame
+{
+    self.timeLeft = GAME_DURATION;
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:NO];
+    [self updateGameTimerLabel];
+    self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
+}
+
+- (void) stopGame
+{
+    [self.tickTimer invalidate];
+    self.tickTimer = nil;
+}
+
+#pragma mark - Game Timer
+
+- (void) updateGameTimer:(NSTimer*)timer
+{
+    if (self.timeLeft <= 0) {
+        [self.gameTimer invalidate];
+        self.timeLeft = 0;
+        [self stopGame];
+        [self updateGameTimerLabel];
+    }
+    else {
+        self.timeLeft -= 0.1;
+        [self updateGameTimerLabel];
+        self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:NO];
+    }
+    
+}
+
+- (void) updateGameTimerLabel
+{
+    self.gameTimerLabel.text = [NSString stringWithFormat:@"%.1f", self.timeLeft];
 }
 
 #pragma mark - Box logic
@@ -105,7 +144,7 @@ typedef enum {
     [self adjustTarget];
     [self showDistractions];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
+    self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
 }
 
 - (BOOL) shouldShowTargetThisTick {
