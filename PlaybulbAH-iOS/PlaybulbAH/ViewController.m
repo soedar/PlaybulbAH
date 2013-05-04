@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GameViewController.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    GameViewController *gameViewController = [[GameViewController alloc] init];
+    [self presentViewController:gameViewController animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

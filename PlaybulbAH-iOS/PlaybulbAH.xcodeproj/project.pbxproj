@@ -24,6 +24,8 @@
 		60907B6B1735A14E00CCA337 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907B6A1735A14E00CCA337 /* libicucore.dylib */; };
 		60907D651735A28800CCA337 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907D641735A28800CCA337 /* QuartzCore.framework */; };
 		60907D671735A29500CCA337 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907D661735A29500CCA337 /* MapKit.framework */; };
+		60D87A5C1735A618009065A3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A5A1735A618009065A3 /* GameViewController.m */; };
+		60D87A5D1735A618009065A3 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A5B1735A618009065A3 /* GameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,9 @@
 		60907B6A1735A14E00CCA337 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		60907D641735A28800CCA337 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60907D661735A29500CCA337 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		60D87A591735A618009065A3 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		60D87A5A1735A618009065A3 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		60D87A5B1735A618009065A3 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				60577E1317359F9C00C9827F /* ViewController.m */,
 				60577E1517359F9C00C9827F /* ViewController.xib */,
 				60577E0117359F9C00C9827F /* Supporting Files */,
+				60D87A591735A618009065A3 /* GameViewController.h */,
+				60D87A5A1735A618009065A3 /* GameViewController.m */,
+				60D87A5B1735A618009065A3 /* GameViewController.xib */,
 			);
 			path = PlaybulbAH;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				60577E0F17359F9C00C9827F /* Default@2x.png in Resources */,
 				60577E1117359F9C00C9827F /* Default-568h@2x.png in Resources */,
 				60577E1717359F9C00C9827F /* ViewController.xib in Resources */,
+				60D87A5D1735A618009065A3 /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +209,7 @@
 				60577E0717359F9C00C9827F /* main.m in Sources */,
 				60577E0B17359F9C00C9827F /* AppDelegate.m in Sources */,
 				60577E1417359F9C00C9827F /* ViewController.m in Sources */,
+				60D87A5C1735A618009065A3 /* GameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
