@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
@@ -31,14 +32,14 @@ typedef enum {
 @property (nonatomic) int distractionsTickRemaining;
 
 
-@property (nonatomic) int redCount;
-@property (nonatomic) int blueCount;
-@property (nonatomic, weak) IBOutlet UILabel *redLabel;
-@property (nonatomic, weak) IBOutlet UILabel *blueLabel;
+@property (nonatomic) int scoreCount;
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
 
 @property (nonatomic) int timeLeft;
 @property (nonatomic, weak) IBOutlet UILabel *gameTimerLabel;
+
+@property (nonatomic, strong) UIAlertView *startAlertView;
 
 @end
 
@@ -59,7 +60,18 @@ typedef enum {
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self startGame];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.startAlertView = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Tap 20 squirrels in 5 seconds!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Ok"
+                                           otherButtonTitles:nil];
+    [self.startAlertView show];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,18 +80,36 @@ typedef enum {
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - AlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView == self.startAlertView) {
+        [self startGame];
+    }
+}
+
 - (void) startGame
 {
     self.timeLeft = GAME_DURATION;
     self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:YES];
     [self updateGameTimerLabel];
     self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
+    
+    
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat
+                     animations:^{
+        self.gameTimerLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+    } completion:nil];
 }
 
 - (void) stopGame
 {
     [self.tickTimer invalidate];
     self.tickTimer = nil;
+    [self.gameTimerLabel.layer removeAllAnimations];
 }
 
 #pragma mark - Game Timer
@@ -220,10 +250,10 @@ typedef enum {
         case BoxStateTarget:
             [self setButtonAtIndex:self.targetIndex withState:BoxStateEmpty];
             self.targetIndex = -1;
-            self.redCount++;
+            self.scoreCount++;
             break;
         case BoxStateDistraction:
-            self.blueCount++;
+            self.scoreCount = MAX(0, --self.scoreCount);
             break;
         case BoxStateEmpty:
             break;
@@ -234,8 +264,7 @@ typedef enum {
 
 - (void) updateLabels
 {
-    self.blueLabel.text = [NSString stringWithFormat:@"%i", self.blueCount];
-    self.redLabel.text = [NSString stringWithFormat:@"%i", self.redCount];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.scoreCount];
 }
 
 @end
