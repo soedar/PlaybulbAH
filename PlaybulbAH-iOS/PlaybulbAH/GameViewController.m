@@ -80,7 +80,7 @@ typedef enum {
     [super viewDidAppear:animated];
     
     NSString *message = [NSString stringWithFormat:@"Get %i target before %i seconds", TARGET_GOAL, GAME_DURATION/1000];
-    self.startAlertView = [[UIAlertView alloc] initWithTitle:@""
+    self.startAlertView = [[UIAlertView alloc] initWithTitle:@"Level 1"
                                                      message:message
                                                     delegate:self
                                            cancelButtonTitle:@"Ok"
