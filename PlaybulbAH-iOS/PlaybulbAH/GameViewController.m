@@ -8,8 +8,8 @@
 
 #import "GameViewController.h"
 
-const CGFloat DEFAULT_TICK_DURATION = 0.3;
-const int MAX_DISTRACTIONS = 3;
+const CGFloat DEFAULT_TICK_DURATION = 0.18;
+const int MAX_DISTRACTIONS = 5;
 
 typedef enum {
     BoxStateEmpty,
