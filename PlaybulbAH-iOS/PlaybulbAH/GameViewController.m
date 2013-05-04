@@ -10,7 +10,7 @@
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
-const NSTimeInterval GAME_DURATION = 5;
+const int GAME_DURATION = 5000;
 
 typedef enum {
     BoxStateEmpty,
@@ -37,7 +37,7 @@ typedef enum {
 @property (nonatomic, weak) IBOutlet UILabel *blueLabel;
 
 
-@property (nonatomic) NSTimeInterval timeLeft;
+@property (nonatomic) int timeLeft;
 @property (nonatomic, weak) IBOutlet UILabel *gameTimerLabel;
 
 @end
@@ -71,7 +71,7 @@ typedef enum {
 - (void) startGame
 {
     self.timeLeft = GAME_DURATION;
-    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:NO];
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:YES];
     [self updateGameTimerLabel];
     self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
 }
@@ -93,16 +93,15 @@ typedef enum {
         [self updateGameTimerLabel];
     }
     else {
-        self.timeLeft -= 0.1;
+        self.timeLeft -= 100;
         [self updateGameTimerLabel];
-        self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:NO];
     }
     
 }
 
 - (void) updateGameTimerLabel
 {
-    self.gameTimerLabel.text = [NSString stringWithFormat:@"%.1f", self.timeLeft];
+    self.gameTimerLabel.text = [NSString stringWithFormat:@"%.1f", (self.timeLeft/1000.0)];
 }
 
 #pragma mark - Box logic
