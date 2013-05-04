@@ -11,7 +11,9 @@
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
-const int GAME_DURATION = 5000;
+const int GAME_DURATION = 3000;
+const int TARGET_GOAL = 10;
+const int INITIAL_LIFE = 2;
 
 typedef enum {
     BoxStateEmpty,
@@ -40,6 +42,11 @@ typedef enum {
 @property (nonatomic, weak) IBOutlet UILabel *gameTimerLabel;
 
 @property (nonatomic, strong) UIAlertView *startAlertView;
+@property (nonatomic, strong) UIAlertView *endAlertView;
+@property (nonatomic, strong) UIAlertView *purchaseAlertView;
+
+@property (nonatomic) int lifeCount;
+@property (nonatomic, weak) IBOutlet UILabel *lifeLabel;
 
 @end
 
@@ -51,7 +58,9 @@ typedef enum {
     if (self) {
         // Custom initialization
         self.tickDuration = DEFAULT_TICK_DURATION;
+        self.lifeCount = INITIAL_LIFE;
         self.targetTicksRemaining = 0;
+        self.distractionsTickRemaining = 0;
     }
     return self;
 }
@@ -60,14 +69,19 @@ typedef enum {
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.timeLeft = GAME_DURATION;
+    [self updateGameTimerLabel];
+    [self updateLabels];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    NSString *message = [NSString stringWithFormat:@"Get %i target before %i seconds", TARGET_GOAL, GAME_DURATION/1000];
     self.startAlertView = [[UIAlertView alloc] initWithTitle:@""
-                                                     message:@"Tap 20 squirrels in 5 seconds!"
+                                                     message:message
                                                     delegate:self
                                            cancelButtonTitle:@"Ok"
                                            otherButtonTitles:nil];
@@ -87,11 +101,22 @@ typedef enum {
     if (alertView == self.startAlertView) {
         [self startGame];
     }
+    else if (alertView == self.endAlertView) {
+        if (buttonIndex == 0) {
+            [self startGame];
+        }
+    }
+    else if (alertView == self.purchaseAlertView) {
+        // launch purchase vc
+    }
 }
 
 - (void) startGame
 {
+    self.scoreCount = 0;
     self.timeLeft = GAME_DURATION;
+    [self updateLabels];
+    [self updateGameTimerLabel];
     self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateGameTimer:) userInfo:nil repeats:YES];
     [self updateGameTimerLabel];
     self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:self.tickDuration target:self selector:@selector(tick:) userInfo:nil repeats:NO];
@@ -109,7 +134,30 @@ typedef enum {
 {
     [self.tickTimer invalidate];
     self.tickTimer = nil;
-    [self.gameTimerLabel.layer removeAllAnimations];
+    
+    for (int i=0;i<self.buttonList.count;i++) {
+        [self setButtonAtIndex:i withState:BoxStateEmpty];
+    }
+    
+    if (self.scoreCount < TARGET_GOAL) {
+        // User lost a life!
+        self.lifeCount--;
+        
+        if (self.lifeCount > 0) {
+            self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"-1 life" delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil];
+            [self.endAlertView show];
+        }
+        else {
+            self.purchaseAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over" message:@"You have ran out of lives!" delegate:self cancelButtonTitle:@"Get more lives" otherButtonTitles:nil];
+            [self.purchaseAlertView show];
+        }
+    }
+    else {
+        self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"You did it! Improve your score!" delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil];
+        [self.endAlertView show];
+    }
+    
+    [self updateLabels];
 }
 
 #pragma mark - Game Timer
@@ -250,6 +298,7 @@ typedef enum {
         case BoxStateTarget:
             [self setButtonAtIndex:self.targetIndex withState:BoxStateEmpty];
             self.targetIndex = -1;
+            self.targetTicksRemaining = 0;
             self.scoreCount++;
             break;
         case BoxStateDistraction:
@@ -265,6 +314,7 @@ typedef enum {
 - (void) updateLabels
 {
     self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.scoreCount];
+    self.lifeLabel.text = [NSString stringWithFormat:@"%i", self.lifeCount];
 }
 
 @end
