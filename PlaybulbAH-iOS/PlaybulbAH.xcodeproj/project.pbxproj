@@ -18,6 +18,12 @@
 		60577E1117359F9C00C9827F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60577E1017359F9C00C9827F /* Default-568h@2x.png */; };
 		60577E1417359F9C00C9827F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60577E1317359F9C00C9827F /* ViewController.m */; };
 		60577E1717359F9C00C9827F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60577E1517359F9C00C9827F /* ViewController.xib */; };
+		60907B651735A12500CCA337 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907B641735A12500CCA337 /* Firebase.framework */; };
+		60907B671735A13900CCA337 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907B661735A13900CCA337 /* CFNetwork.framework */; };
+		60907B691735A14000CCA337 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907B681735A14000CCA337 /* Security.framework */; };
+		60907B6B1735A14E00CCA337 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907B6A1735A14E00CCA337 /* libicucore.dylib */; };
+		60907D651735A28800CCA337 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907D641735A28800CCA337 /* QuartzCore.framework */; };
+		60907D671735A29500CCA337 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60907D661735A29500CCA337 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		60577E1217359F9C00C9827F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		60577E1317359F9C00C9827F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		60577E1617359F9C00C9827F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		60907B641735A12500CCA337 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Frameworks/Firebase.framework; sourceTree = "<group>"; };
+		60907B661735A13900CCA337 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		60907B681735A14000CCA337 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		60907B6A1735A14E00CCA337 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		60907D641735A28800CCA337 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		60907D661735A29500CCA337 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +56,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60577DFB17359F9C00C9827F /* UIKit.framework in Frameworks */,
+				60907D671735A29500CCA337 /* MapKit.framework in Frameworks */,
+				60907D651735A28800CCA337 /* QuartzCore.framework in Frameworks */,
+				60907B6B1735A14E00CCA337 /* libicucore.dylib in Frameworks */,
 				60577DFD17359F9C00C9827F /* Foundation.framework in Frameworks */,
+				60907B691735A14000CCA337 /* Security.framework in Frameworks */,
+				60907B671735A13900CCA337 /* CFNetwork.framework in Frameworks */,
+				60577DFB17359F9C00C9827F /* UIKit.framework in Frameworks */,
 				60577DFF17359F9C00C9827F /* CoreGraphics.framework in Frameworks */,
+				60907B651735A12500CCA337 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +91,12 @@
 		60577DF917359F9C00C9827F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60907D641735A28800CCA337 /* QuartzCore.framework */,
+				60907B6A1735A14E00CCA337 /* libicucore.dylib */,
+				60907D661735A29500CCA337 /* MapKit.framework */,
+				60907B681735A14000CCA337 /* Security.framework */,
+				60907B661735A13900CCA337 /* CFNetwork.framework */,
+				60907B641735A12500CCA337 /* Firebase.framework */,
 				60577DFA17359F9C00C9827F /* UIKit.framework */,
 				60577DFC17359F9C00C9827F /* Foundation.framework */,
 				60577DFE17359F9C00C9827F /* CoreGraphics.framework */,
@@ -260,9 +284,18 @@
 		60577E1B17359F9C00C9827F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlaybulbAH/PlaybulbAH-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "PlaybulbAH/PlaybulbAH-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -271,9 +304,18 @@
 		60577E1C17359F9C00C9827F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlaybulbAH/PlaybulbAH-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers";
 				INFOPLIST_FILE = "PlaybulbAH/PlaybulbAH-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,6 +340,7 @@
 				60577E1C17359F9C00C9827F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
