@@ -15,6 +15,10 @@
 @property (nonatomic, weak) IBOutlet UITableView *txnTableView;
 @property (nonatomic, strong) NSArray *txnList;
 
+@property (nonatomic, strong) NSArray *claimedList;
+@property (nonatomic, strong) NSArray *unclaimedList;
+
+
 @end
 
 @implementation WalletViewController
@@ -37,16 +41,22 @@
     NSString *url = @"https://playbulb.firebaseio.com/transactions";
     Firebase* dataRef = [[Firebase alloc] initWithUrl:url];
     [dataRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        // do some stuff once
         NSDictionary *txnDictionary = snapshot.value;
         
         NSMutableArray *txnList = [NSMutableArray array];
+        NSMutableArray *unclaimedList = [NSMutableArray array];
+        NSMutableArray *claimedList = [NSMutableArray array];
+        
         for (NSString *key in [txnDictionary allKeys]) {
             Transaction *txn = [Transaction txnFromDictionary:txnDictionary[key] withId:key];
             [txnList addObject:txn];
+            (txn.claimed) ? [claimedList addObject:txn] : [unclaimedList addObject:txn];
         }
         
         self.txnList = txnList;
+        self.claimedList = claimedList;
+        self.unclaimedList = unclaimedList;
+        
         [self.txnTableView reloadData];
     }];
 }
@@ -59,9 +69,19 @@
 
 #pragma mark - UITableView datasource and delegate
 
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.txnList.count;
+    return (section == 0) ? self.unclaimedList.count : self.claimedList.count;
+}
+
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return (section == 0) ? @"Unclaimed" : @"Claimed";
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,7 +92,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
     
-    Transaction *txn = self.txnList[indexPath.row];
+    Transaction *txn = (indexPath.section == 0) ? self.unclaimedList[indexPath.row] : self.claimedList[indexPath.row];
     
     cell.textLabel.text = txn.offerName;
     cell.detailTextLabel.text = txn.cardCode;

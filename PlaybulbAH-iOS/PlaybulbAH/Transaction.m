@@ -34,7 +34,7 @@
 
 - (BOOL) claimed
 {
-    int claimed = [self.dataDictionary[@"claimed"] intValue];
+    int claimed = [self.dataDictionary[@"isClaimed"] intValue];
     return claimed != 0;
 }
 
