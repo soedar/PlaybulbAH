@@ -45,6 +45,7 @@
 		60D87A911736401B009065A3 /* WalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A8F1736401B009065A3 /* WalletViewController.xib */; };
 		60D87A951736592D009065A3 /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A931736592D009065A3 /* OfferDetailsViewController.m */; };
 		60D87A961736592D009065A3 /* OfferDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A941736592D009065A3 /* OfferDetailsViewController.xib */; };
+		60D87A9917368D27009065A3 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9817368D27009065A3 /* Offer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,8 @@
 		60D87A921736592D009065A3 /* OfferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsViewController.h; sourceTree = "<group>"; };
 		60D87A931736592D009065A3 /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
 		60D87A941736592D009065A3 /* OfferDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsViewController.xib; sourceTree = "<group>"; };
+		60D87A9717368D27009065A3 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		60D87A9817368D27009065A3 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 				60D87A601735D489009065A3 /* OffersViewController.xib */,
 				60D87A5E1735D489009065A3 /* OffersViewController.h */,
 				60D87A5F1735D489009065A3 /* OffersViewController.m */,
+				60D87A9717368D27009065A3 /* Offer.h */,
+				60D87A9817368D27009065A3 /* Offer.m */,
 				60D87A921736592D009065A3 /* OfferDetailsViewController.h */,
 				60D87A931736592D009065A3 /* OfferDetailsViewController.m */,
 				60D87A941736592D009065A3 /* OfferDetailsViewController.xib */,
@@ -329,6 +334,7 @@
 				60D87A7F1735D59C009065A3 /* UIImageView+AFNetworking.m in Sources */,
 				60D87A901736401B009065A3 /* WalletViewController.m in Sources */,
 				60D87A951736592D009065A3 /* OfferDetailsViewController.m in Sources */,
+				60D87A9917368D27009065A3 /* Offer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

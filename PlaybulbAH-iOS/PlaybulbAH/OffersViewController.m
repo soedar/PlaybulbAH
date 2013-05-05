@@ -8,11 +8,14 @@
 
 #import "OffersViewController.h"
 #import "OfferDetailsViewController.h"
+#import "Offer.h"
+#import <Firebase/Firebase.h>
 
 @interface OffersViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableView *offersTableView;
 
+@property (nonatomic, strong) NSArray *offerList;
 @end
 
 @implementation OffersViewController
@@ -33,6 +36,22 @@
     // Do any additional setup after loading the view from its nib.
     
     
+    NSString *url = @"https://playbulb.firebaseio.com/offers";
+    Firebase* dataRef = [[Firebase alloc] initWithUrl:url];
+    [dataRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        // do some stuff once
+        NSDictionary *offerDictionary = snapshot.value;
+        
+        NSMutableArray *offerList = [NSMutableArray array];
+        for (NSString *key in [offerDictionary allKeys]) {
+            Offer *offer = [Offer offerFromDictionary:offerDictionary[key]];
+            [offerList addObject:offer];
+        }
+        
+        self.offerList = offerList;
+        [self.offersTableView reloadData];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +64,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.offerList.count;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,8 +75,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
     
-    cell.textLabel.text = @"Name of company";
-    cell.detailTextLabel.text = @"Name of offer";
+    int row = indexPath.row;
+    Offer *offer = self.offerList[row];
+    
+    
+    cell.textLabel.text = offer.offerName;
+    cell.detailTextLabel.text = offer.shortDescription;
     
     
     return cell;
