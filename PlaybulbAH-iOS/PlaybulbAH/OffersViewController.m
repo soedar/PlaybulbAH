@@ -7,8 +7,11 @@
 //
 
 #import "OffersViewController.h"
+#import "OfferDetailsViewController.h"
 
 @interface OffersViewController ()
+
+@property (nonatomic, weak) IBOutlet UITableView *offersTableView;
 
 @end
 
@@ -29,12 +32,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableView datasource and delegate
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *reuseIdentifier = @"offerCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    }
+    
+    cell.textLabel.text = @"Name of company";
+    cell.detailTextLabel.text = @"Name of offer";
+    
+    
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OfferDetailsViewController *detailsViewController = [[OfferDetailsViewController alloc] init];
+    [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
 @end
