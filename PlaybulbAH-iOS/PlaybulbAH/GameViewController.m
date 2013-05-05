@@ -15,7 +15,7 @@
 const CGFloat DEFAULT_TICK_DURATION = 0.25;
 const int MAX_DISTRACTIONS = 5;
 const int GAME_DURATION = 7000;
-const int TARGET_GOAL = 15;
+const int TARGET_GOAL = 10;
 const int INITIAL_LIFE = 3;
 
 typedef enum {
