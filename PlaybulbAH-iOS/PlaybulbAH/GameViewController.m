@@ -379,9 +379,11 @@ typedef enum {
     
     OffersViewController *offersController = [[OffersViewController alloc] init];
     UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
+    offersNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
     
     WalletViewController *walletController = [[WalletViewController alloc] init];
     UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
+    walletNavController.navigationBar.tintColor = NAV_BAR_TINT_COLOR;
     
     offersController.navigationItem.leftBarButtonItem = backButton;
     walletController.navigationItem.leftBarButtonItem = backButton2;
