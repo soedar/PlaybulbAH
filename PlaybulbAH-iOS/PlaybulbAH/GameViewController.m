@@ -81,6 +81,7 @@ typedef enum {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLivesAfterPurchase:) name:@"AddMoreLives" object:nil];
     
     [self.view setBackgroundColor:BACKGROUND_COLOR];
+    [self setupStartGameButton];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -394,5 +395,14 @@ typedef enum {
     return tabBarController;
 }
 
+#pragma mark - Buttons
 
+- (void) setupStartGameButton
+{
+    self.startButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
+    self.startButton.layer.masksToBounds = YES;
+    self.startButton.layer.cornerRadius = 8.0f;
+    
+    [self.startButton setTitle:@"PLAY" forState:UIControlStateNormal];
+}
 @end

@@ -9,6 +9,7 @@
 #import "OfferDetailsViewController.h"
 #import <Firebase/Firebase.h>
 #import "Colors.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface OfferDetailsViewController ()
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *longDescLabel;
 @property (nonatomic, weak) IBOutlet UILabel *offerLabel;
+@property (nonatomic, weak) IBOutlet UIButton *buyButton;
 
 @end
 
@@ -50,6 +52,7 @@
     self.longDescLabel.text = self.offer.longDescription;
     
     [self.view setBackgroundColor:BACKGROUND_COLOR];
+    [self setupBuyButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,6 +100,17 @@
 - (int) random4DigitNumber
 {
     return (int) (arc4random() % 9000) + 1000;
+}
+
+#pragma mark - Buttons
+
+- (void) setupBuyButton
+{
+    self.buyButton.backgroundColor = BUTTON_BACKGROUND_COLOR;
+    self.buyButton.layer.masksToBounds = YES;
+    self.buyButton.layer.cornerRadius = 8.0f;
+    
+    [self.buyButton setTitle:@"BUY" forState:UIControlStateNormal];
 }
 
 @end
