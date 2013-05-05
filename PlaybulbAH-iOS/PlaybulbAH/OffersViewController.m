@@ -44,7 +44,7 @@
         
         NSMutableArray *offerList = [NSMutableArray array];
         for (NSString *key in [offerDictionary allKeys]) {
-            Offer *offer = [Offer offerFromDictionary:offerDictionary[key]];
+            Offer *offer = [Offer offerFromDictionary:offerDictionary[key] withId:key];
             [offerList addObject:offer];
         }
         

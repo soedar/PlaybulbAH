@@ -61,7 +61,7 @@
 
     NSDictionary *transaction = @{@"comment": @"",
                                   @"isClaimed": @(0),
-                                  @"offerId": @(self.offer.offerID),
+                                  @"offerId": self.offer.offerID,
                                   @"timeStamp": @((int)[[NSDate date] timeIntervalSince1970])};
     [newFbTransaction setValue:transaction withCompletionBlock:^(NSError *error) {
         if (error) {

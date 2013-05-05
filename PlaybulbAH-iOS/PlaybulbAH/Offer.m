@@ -11,19 +11,39 @@
 @interface Offer ()
 
 @property (nonatomic, strong) NSDictionary *dataDictionary;
+@property (nonatomic, strong) NSString *offerID;
 
 @end
 
 @implementation Offer
 
-+ (Offer*) offerFromDictionary:(NSDictionary *)dictionary
++ (Offer*) offerFromDictionary:(NSDictionary *)dictionary withId:(NSString *)offerId
 {
     Offer *offer = [[Offer alloc] init];
     if (offer) {
         offer.dataDictionary = dictionary;
+        offer.offerID = offerId;
     }
     return offer;
 }
+
+#pragma mark - NSCoding
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    NSString *offerID = [aDecoder decodeObjectForKey:@"OfferId"];
+    NSDictionary *dataDictionary = [aDecoder decodeObjectForKey:@"Data"];
+    
+    return [Offer offerFromDictionary:dataDictionary withId:offerID];
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.dataDictionary forKey:@"Data"];
+    [aCoder encodeObject:self.offerID forKey:@"OfferId"];
+}
+
+#pragma mark - Accessors
 
 - (int) cost
 {
@@ -59,12 +79,6 @@
 {
     return self.dataDictionary[@"vendorName"];
 }
-
-- (int) offerID
-{
-    return [self.dataDictionary[@"offerId"] intValue];
-}
-
 
 
 
