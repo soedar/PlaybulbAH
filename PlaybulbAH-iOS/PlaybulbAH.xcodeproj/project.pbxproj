@@ -46,6 +46,7 @@
 		60D87A951736592D009065A3 /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A931736592D009065A3 /* OfferDetailsViewController.m */; };
 		60D87A961736592D009065A3 /* OfferDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A941736592D009065A3 /* OfferDetailsViewController.xib */; };
 		60D87A9917368D27009065A3 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9817368D27009065A3 /* Offer.m */; };
+		60D87A9C17369E9D009065A3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9B17369E9D009065A3 /* Transaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,8 @@
 		60D87A941736592D009065A3 /* OfferDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferDetailsViewController.xib; sourceTree = "<group>"; };
 		60D87A9717368D27009065A3 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		60D87A9817368D27009065A3 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		60D87A9A17369E9D009065A3 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		60D87A9B17369E9D009065A3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				60D87A921736592D009065A3 /* OfferDetailsViewController.h */,
 				60D87A931736592D009065A3 /* OfferDetailsViewController.m */,
 				60D87A941736592D009065A3 /* OfferDetailsViewController.xib */,
+				60D87A9A17369E9D009065A3 /* Transaction.h */,
+				60D87A9B17369E9D009065A3 /* Transaction.m */,
 			);
 			path = PlaybulbAH;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				60D87A901736401B009065A3 /* WalletViewController.m in Sources */,
 				60D87A951736592D009065A3 /* OfferDetailsViewController.m in Sources */,
 				60D87A9917368D27009065A3 /* Offer.m in Sources */,
+				60D87A9C17369E9D009065A3 /* Transaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
