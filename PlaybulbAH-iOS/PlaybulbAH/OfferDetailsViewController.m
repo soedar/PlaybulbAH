@@ -10,9 +10,22 @@
 
 @interface OfferDetailsViewController ()
 
+@property (nonatomic, strong) Offer *offer;
+
 @end
 
 @implementation OfferDetailsViewController
+
+- (id)initWithOffer:(Offer *)offer
+{
+    self = [self init];
+    if (self) {
+        self.offer = offer;
+        self.title = offer.vendorName;
+    }
+    
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

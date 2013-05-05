@@ -75,9 +75,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
     
-    int row = indexPath.row;
-    Offer *offer = self.offerList[row];
-    
+    Offer *offer = self.offerList[indexPath.row];
     
     cell.textLabel.text = offer.offerName;
     cell.detailTextLabel.text = offer.shortDescription;
@@ -88,7 +86,8 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OfferDetailsViewController *detailsViewController = [[OfferDetailsViewController alloc] init];
+    Offer *offer = self.offerList[indexPath.row];
+    OfferDetailsViewController *detailsViewController = [[OfferDetailsViewController alloc] initWithOffer:offer];
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 

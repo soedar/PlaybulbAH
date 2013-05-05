@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Offer.h"
 
 @interface OfferDetailsViewController : UIViewController
+
+- (id) initWithOffer:(Offer*)offer;
 
 @end
