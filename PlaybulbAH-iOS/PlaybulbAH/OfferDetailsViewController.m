@@ -8,6 +8,7 @@
 
 #import "OfferDetailsViewController.h"
 #import <Firebase/Firebase.h>
+#import "Colors.h"
 
 @interface OfferDetailsViewController ()
 
@@ -47,6 +48,8 @@
     
     self.offerLabel.text = self.offer.offerName;
     self.longDescLabel.text = self.offer.longDescription;
+    
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
 }
 
 - (void)didReceiveMemoryWarning

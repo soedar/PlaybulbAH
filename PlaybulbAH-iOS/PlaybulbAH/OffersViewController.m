@@ -10,6 +10,7 @@
 #import "OfferDetailsViewController.h"
 #import "Offer.h"
 #import <Firebase/Firebase.h>
+#import "Colors.h"
 
 @interface OffersViewController ()
 
@@ -52,6 +53,7 @@
         [self.offersTableView reloadData];
     }];
     
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
 }
 
 - (void)didReceiveMemoryWarning

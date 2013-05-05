@@ -36,7 +36,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUITableView" id="381466461">
+					<object class="IBUITableView" id="858738275">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 455}</string>
@@ -45,7 +45,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
+							<bytes key="NSWhite">MCAwAA</bytes>
 						</object>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -107,14 +107,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">txnTableView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="381466461"/>
+						<reference key="destination" ref="858738275"/>
 					</object>
 					<int key="connectionID">11</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
-						<reference key="source" ref="381466461"/>
+						<reference key="source" ref="858738275"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">9</int>
@@ -122,7 +122,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="381466461"/>
+						<reference key="source" ref="858738275"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">10</int>
@@ -140,8 +140,8 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="1037245367">
-								<reference key="firstItem" ref="381466461"/>
+							<object class="IBNSLayoutConstraint" id="654206929">
+								<reference key="firstItem" ref="858738275"/>
 								<int key="firstAttribute">4</int>
 								<int key="relation">0</int>
 								<reference key="secondItem" ref="191373211"/>
@@ -156,8 +156,8 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="202271665">
-								<reference key="firstItem" ref="381466461"/>
+							<object class="IBNSLayoutConstraint" id="925917741">
+								<reference key="firstItem" ref="858738275"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
 								<reference key="secondItem" ref="191373211"/>
@@ -172,8 +172,8 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="323653782">
-								<reference key="firstItem" ref="381466461"/>
+							<object class="IBNSLayoutConstraint" id="581986964">
+								<reference key="firstItem" ref="858738275"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
 								<reference key="secondItem" ref="191373211"/>
@@ -188,8 +188,8 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="803622520">
-								<reference key="firstItem" ref="381466461"/>
+							<object class="IBNSLayoutConstraint" id="595990897">
+								<reference key="firstItem" ref="858738275"/>
 								<int key="firstAttribute">5</int>
 								<int key="relation">0</int>
 								<reference key="secondItem" ref="191373211"/>
@@ -204,7 +204,7 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<reference ref="381466461"/>
+							<reference ref="858738275"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -221,27 +221,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="381466461"/>
+						<reference key="object" ref="858738275"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="803622520"/>
+						<reference key="object" ref="595990897"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">6</int>
-						<reference key="object" ref="323653782"/>
+						<reference key="object" ref="581986964"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-						<reference key="object" ref="202271665"/>
+						<reference key="object" ref="925917741"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="1037245367"/>
+						<reference key="object" ref="654206929"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -253,10 +253,10 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="1.IBViewMetadataConstraints">
-					<reference ref="803622520"/>
-					<reference ref="323653782"/>
-					<reference ref="202271665"/>
-					<reference ref="1037245367"/>
+					<reference ref="595990897"/>
+					<reference ref="581986964"/>
+					<reference ref="925917741"/>
+					<reference ref="654206929"/>
 				</array>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<boolean value="NO" key="4.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>

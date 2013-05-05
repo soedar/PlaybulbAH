@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "OffersViewController.h"
 #import "WalletViewController.h"
+#import "Colors.h"
 #import <QuartzCore/QuartzCore.h>
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
@@ -78,6 +79,8 @@ typedef enum {
     [self updateLabels];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLivesAfterPurchase:) name:@"AddMoreLives" object:nil];
+    
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
 }
 
 - (void) viewDidAppear:(BOOL)animated

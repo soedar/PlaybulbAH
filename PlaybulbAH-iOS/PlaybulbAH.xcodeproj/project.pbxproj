@@ -48,6 +48,7 @@
 		60D87A9917368D27009065A3 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9817368D27009065A3 /* Offer.m */; };
 		60D87A9C17369E9D009065A3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9B17369E9D009065A3 /* Transaction.m */; };
 		60D87A9E1736A678009065A3 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A9D1736A678009065A3 /* lightbulb.png */; };
+		60D87AA11736C5DD009065A3 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA01736C5DD009065A3 /* heart@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,8 @@
 		60D87A9A17369E9D009065A3 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		60D87A9B17369E9D009065A3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		60D87A9D1736A678009065A3 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		60D87A9F1736C357009065A3 /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		60D87AA01736C5DD009065A3 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 				60D87A941736592D009065A3 /* OfferDetailsViewController.xib */,
 				60D87A9A17369E9D009065A3 /* Transaction.h */,
 				60D87A9B17369E9D009065A3 /* Transaction.m */,
+				60D87A9F1736C357009065A3 /* Colors.h */,
 			);
 			path = PlaybulbAH;
 			sourceTree = "<group>";
@@ -245,6 +249,7 @@
 		60D87A861735E67F009065A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60D87AA01736C5DD009065A3 /* heart@2x.png */,
 				60D87A891735E866009065A3 /* Mole.png */,
 				60D87A9D1736A678009065A3 /* lightbulb.png */,
 				60D87A8B1735EB64009065A3 /* baby.png */,
@@ -317,6 +322,7 @@
 				60D87A911736401B009065A3 /* WalletViewController.xib in Resources */,
 				60D87A961736592D009065A3 /* OfferDetailsViewController.xib in Resources */,
 				60D87A9E1736A678009065A3 /* lightbulb.png in Resources */,
+				60D87AA11736C5DD009065A3 /* heart@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

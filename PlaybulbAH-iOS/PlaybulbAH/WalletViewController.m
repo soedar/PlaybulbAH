@@ -9,6 +9,7 @@
 #import "WalletViewController.h"
 #import <Firebase/Firebase.h>
 #import "Transaction.h"
+#import "Colors.h"
 
 @interface WalletViewController ()
 
@@ -59,6 +60,7 @@
         
         [self.txnTableView reloadData];
     }];
+    [self.view setBackgroundColor:BACKGROUND_COLOR];
 }
 
 - (void)didReceiveMemoryWarning
