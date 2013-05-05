@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "GameViewController.h"
+#import "OffersViewController.h"
 
 @interface ViewController ()
 
@@ -27,6 +28,10 @@
     
     GameViewController *gameViewController = [[GameViewController alloc] init];
     [self presentViewController:gameViewController animated:NO completion:nil];
+    /*
+    OffersViewController *offersViewController = [[OffersViewController alloc] init];
+    [self presentViewController:offersViewController animated:NO completion:nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning

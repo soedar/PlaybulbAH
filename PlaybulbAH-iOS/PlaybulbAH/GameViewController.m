@@ -11,7 +11,7 @@
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
-const int GAME_DURATION = 3000;
+const int GAME_DURATION = 30000;
 const int TARGET_GOAL = 10;
 const int INITIAL_LIFE = 2;
 
@@ -189,10 +189,12 @@ typedef enum {
     UIButton *button = self.buttonList[index];
     switch (boxState) {
         case BoxStateEmpty:
-            button.backgroundColor = [UIColor blackColor];
+            [button setImage:nil forState:UIControlStateNormal];
+            button.backgroundColor = [UIColor clearColor];
             break;
         case BoxStateTarget:
-            button.backgroundColor = [UIColor redColor];
+            [button setImage:[UIImage imageNamed:@"Mole"] forState:UIControlStateNormal];
+            button.backgroundColor = [UIColor clearColor];
             break;
         case BoxStateDistraction:
             button.backgroundColor = [UIColor blueColor];
