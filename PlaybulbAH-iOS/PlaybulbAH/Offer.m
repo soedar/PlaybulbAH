@@ -60,6 +60,10 @@
     return self.dataDictionary[@"vendorName"];
 }
 
+- (int) offerID
+{
+    return [self.dataDictionary[@"offerId"] intValue];
+}
 
 
 

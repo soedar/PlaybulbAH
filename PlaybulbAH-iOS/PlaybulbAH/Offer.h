@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly) int cost;
 @property (nonatomic, readonly) int reward;
+@property (nonatomic, readonly) int offerID;
 @property (nonatomic, strong, readonly) NSString *shortDescription;
 @property (nonatomic, strong, readonly) NSString *longDescription;
 @property (nonatomic, strong, readonly) NSString *offerName;
