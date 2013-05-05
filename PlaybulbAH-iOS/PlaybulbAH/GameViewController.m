@@ -7,11 +7,13 @@
 //
 
 #import "GameViewController.h"
+#import "OffersViewController.h"
+#import "WalletViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
-const int GAME_DURATION = 30000;
+const int GAME_DURATION = 5000;
 const int TARGET_GOAL = 10;
 const int INITIAL_LIFE = 2;
 
@@ -108,6 +110,7 @@ typedef enum {
     }
     else if (alertView == self.purchaseAlertView) {
         // launch purchase vc
+        [self showPlaybulbController];
     }
 }
 
@@ -316,5 +319,48 @@ typedef enum {
     self.scoreLabel.text = [NSString stringWithFormat:@"%i", self.scoreCount];
     self.lifeLabel.text = [NSString stringWithFormat:@"%i", self.lifeCount];
 }
+
+
+#pragma mark - Playbulb methds
+
+- (void) showPlaybulbController
+{
+    UIViewController *playbulbController = [self playbulbController];
+    [self presentViewController:playbulbController
+                       animated:YES completion:nil];
+}
+
+- (void) dismissPlaybulbViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIViewController *)playbulbController
+{
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Back"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self action:@selector(dismissPlaybulbViewController)];
+    UIBarButtonItem *backButton2 = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"Back"
+                                    style:UIBarButtonItemStyleBordered
+                                    target:self action:@selector(dismissPlaybulbViewController)];
+    
+    OffersViewController *offersController = [[OffersViewController alloc] init];
+    UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
+    
+    WalletViewController *walletController = [[WalletViewController alloc] init];
+    UINavigationController *walletNavController = [[UINavigationController alloc] initWithRootViewController:walletController];
+    
+    offersController.navigationItem.leftBarButtonItem = backButton;
+    walletController.navigationItem.leftBarButtonItem = backButton2;
+    
+    NSArray *tabViewControllers = [[NSArray alloc] initWithObjects:offersNavController, walletNavController, nil];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:tabViewControllers animated:YES];
+    
+    return tabBarController;
+}
+
 
 @end

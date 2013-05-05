@@ -1,25 +1,25 @@
 //
-//  OffersViewController.m
+//  WalletViewController.m
 //  PlaybulbAH
 //
-//  Created by soedar on 4/5/13.
+//  Created by soedar on 5/5/13.
 //  Copyright (c) 2013 Playbulb. All rights reserved.
 //
 
-#import "OffersViewController.h"
+#import "WalletViewController.h"
 
-@interface OffersViewController ()
+@interface WalletViewController ()
 
 @end
 
-@implementation OffersViewController
+@implementation WalletViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Offers";
+        self.title = @"Wallet";
     }
     return self;
 }
@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
 }
 
 - (void)didReceiveMemoryWarning
