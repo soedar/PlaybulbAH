@@ -55,6 +55,11 @@
     return [self.dataDictionary[@"reward"] intValue];
 }
 
+- (CGFloat) profit
+{
+    return [self.dataDictionary[@"devProfit"] floatValue];
+}
+
 - (NSString*) shortDescription
 {
     return self.dataDictionary[@"description"];

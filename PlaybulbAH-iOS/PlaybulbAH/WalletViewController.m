@@ -48,10 +48,12 @@
         NSMutableArray *unclaimedList = [NSMutableArray array];
         NSMutableArray *claimedList = [NSMutableArray array];
         
-        for (NSString *key in [txnDictionary allKeys]) {
-            Transaction *txn = [Transaction txnFromDictionary:txnDictionary[key] withId:key];
-            [txnList addObject:txn];
-            (txn.claimed) ? [claimedList addObject:txn] : [unclaimedList addObject:txn];
+        if (![txnDictionary isKindOfClass:[NSNull class]]) {
+            for (NSString *key in [txnDictionary allKeys]) {
+                Transaction *txn = [Transaction txnFromDictionary:txnDictionary[key] withId:key];
+                [txnList addObject:txn];
+                (txn.claimed) ? [claimedList addObject:txn] : [unclaimedList addObject:txn];
+            }
         }
         
         self.txnList = txnList;

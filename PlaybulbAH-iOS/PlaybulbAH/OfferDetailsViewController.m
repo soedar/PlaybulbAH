@@ -70,7 +70,9 @@
                                   @"isClaimed": @(0),
                                   @"offerId": self.offer.offerID,
                                   @"offerName": self.offer.offerName,
-                                  @"timeStamp": @((int)[[NSDate date] timeIntervalSince1970])};
+                                  @"vendorName": self.offer.vendorName,
+                                  @"devProfit": @(self.offer.profit),
+                                  @"timeStamp": [[NSDate date] description]};
     [newFbTransaction setValue:transaction withCompletionBlock:^(NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
