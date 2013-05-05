@@ -43,4 +43,9 @@
     return self.dataDictionary[@"offerId"];
 }
 
+- (NSString*) offerName
+{
+    return self.dataDictionary[@"offerName"];
+}
+
 @end

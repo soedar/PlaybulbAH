@@ -63,6 +63,7 @@
                                   @"cardCode": [self cardCode],
                                   @"isClaimed": @(0),
                                   @"offerId": self.offer.offerID,
+                                  @"offerName": self.offer.offerName,
                                   @"timeStamp": @((int)[[NSDate date] timeIntervalSince1970])};
     [newFbTransaction setValue:transaction withCompletionBlock:^(NSError *error) {
         if (error) {

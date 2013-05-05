@@ -8,9 +8,11 @@
 
 #import "WalletViewController.h"
 #import <Firebase/Firebase.h>
+#import "Transaction.h"
 
 @interface WalletViewController ()
 
+@property (nonatomic, weak) IBOutlet UITableView *txnTableView;
 @property (nonatomic, strong) NSArray *txnList;
 
 @end
@@ -34,17 +36,18 @@
     
     NSString *url = @"https://playbulb.firebaseio.com/transactions";
     Firebase* dataRef = [[Firebase alloc] initWithUrl:url];
-    [dataRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    [dataRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         // do some stuff once
         NSDictionary *txnDictionary = snapshot.value;
         
         NSMutableArray *txnList = [NSMutableArray array];
         for (NSString *key in [txnDictionary allKeys]) {
-            [txnList addObject:offer];
+            Transaction *txn = [Transaction txnFromDictionary:txnDictionary[key] withId:key];
+            [txnList addObject:txn];
         }
         
-        self.offerList = offerList;
-        [self.offersTableView reloadData];
+        self.txnList = txnList;
+        [self.txnTableView reloadData];
     }];
 }
 
@@ -58,21 +61,21 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.offerList.count;
+    return self.txnList.count;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"offerCell";
+    static NSString *reuseIdentifier = @"txnCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
     
-    Offer *offer = self.offerList[indexPath.row];
+    Transaction *txn = self.txnList[indexPath.row];
     
-    cell.textLabel.text = offer.offerName;
-    cell.detailTextLabel.text = offer.shortDescription;
+    cell.textLabel.text = txn.offerName;
+    cell.detailTextLabel.text = txn.cardCode;
     
     
     return cell;

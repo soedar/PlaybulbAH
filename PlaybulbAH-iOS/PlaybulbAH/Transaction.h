@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) BOOL claimed;
 @property (nonatomic, strong, readonly) NSString *cardCode;
 @property (nonatomic, strong, readonly) NSString *offerId;
+@property (nonatomic, strong, readonly) NSString *offerName;
 @property (nonatomic, strong, readonly) NSString *txnId;
 
 + (Transaction*) txnFromDictionary:(NSDictionary*)dictionary withId:(NSString*)txnId;
