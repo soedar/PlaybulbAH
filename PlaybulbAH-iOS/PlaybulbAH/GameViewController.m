@@ -108,7 +108,11 @@ typedef enum {
         self.purchaseAlertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You have ran out of lives!" delegate:self cancelButtonTitle:@"Get more lives" otherButtonTitles:nil];
         [self.purchaseAlertView show];
     }
-    
+}
+
+- (IBAction)playBulbTapped:(id)sender
+{
+    [self showPlaybulbController];
 }
 
 #pragma mark - AlertView Delegate
