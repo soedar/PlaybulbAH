@@ -12,10 +12,10 @@
 #import "Colors.h"
 #import <QuartzCore/QuartzCore.h>
 
-const CGFloat DEFAULT_TICK_DURATION = 0.18;
+const CGFloat DEFAULT_TICK_DURATION = 0.25;
 const int MAX_DISTRACTIONS = 5;
-const int GAME_DURATION = 1000;
-const int TARGET_GOAL = 10;
+const int GAME_DURATION = 7000;
+const int TARGET_GOAL = 15;
 const int INITIAL_LIFE = 3;
 
 typedef enum {
@@ -100,7 +100,7 @@ typedef enum {
 - (IBAction)startGameTapped:(id)sender
 {
     if (self.lifeCount > 0) {
-        NSString *message = [NSString stringWithFormat:@"Get %i target before %i seconds", TARGET_GOAL, GAME_DURATION/1000];
+        NSString *message = [NSString stringWithFormat:@"Hit %i moleys before %i seconds!", TARGET_GOAL, GAME_DURATION/1000];
         self.startAlertView = [[UIAlertView alloc] initWithTitle:@"Level 1"
                                                          message:message
                                                         delegate:self
