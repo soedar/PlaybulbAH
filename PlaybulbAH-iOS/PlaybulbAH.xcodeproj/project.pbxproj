@@ -38,9 +38,9 @@
 		60D87A7E1735D59C009065A3 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A741735D59C009065A3 /* AFXMLRequestOperation.m */; };
 		60D87A7F1735D59C009065A3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A761735D59C009065A3 /* UIImageView+AFNetworking.m */; };
 		60D87A811735D698009065A3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D87A801735D698009065A3 /* MobileCoreServices.framework */; };
-		60D87A851735D77B009065A3 /* AFOAuth1Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A841735D77B009065A3 /* AFOAuth1Client.m */; };
 		60D87A881735E68B009065A3 /* holey-moley-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A871735E68B009065A3 /* holey-moley-background@2x.png */; };
 		60D87A8A1735E866009065A3 /* Mole.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A891735E866009065A3 /* Mole.png */; };
+		60D87A8C1735EB64009065A3 /* baby.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A8B1735EB64009065A3 /* baby.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,10 +92,9 @@
 		60D87A751735D59C009065A3 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		60D87A761735D59C009065A3 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		60D87A801735D698009065A3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		60D87A831735D77B009065A3 /* AFOAuth1Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth1Client.h; sourceTree = "<group>"; };
-		60D87A841735D77B009065A3 /* AFOAuth1Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth1Client.m; sourceTree = "<group>"; };
 		60D87A871735E68B009065A3 /* holey-moley-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "holey-moley-background@2x.png"; sourceTree = "<group>"; };
 		60D87A891735E866009065A3 /* Mole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mole.png; sourceTree = "<group>"; };
+		60D87A8B1735EB64009065A3 /* baby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baby.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +138,6 @@
 		60577DF917359F9C00C9827F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60D87A821735D77B009065A3 /* AFOAuth1Client */,
 				60D87A631735D59C009065A3 /* AFNetworking */,
 				60907D641735A28800CCA337 /* QuartzCore.framework */,
 				60907B6A1735A14E00CCA337 /* libicucore.dylib */,
@@ -216,20 +214,11 @@
 			path = Frameworks/AFNetworking;
 			sourceTree = "<group>";
 		};
-		60D87A821735D77B009065A3 /* AFOAuth1Client */ = {
-			isa = PBXGroup;
-			children = (
-				60D87A831735D77B009065A3 /* AFOAuth1Client.h */,
-				60D87A841735D77B009065A3 /* AFOAuth1Client.m */,
-			);
-			name = AFOAuth1Client;
-			path = Frameworks/AFOAuth1Client;
-			sourceTree = "<group>";
-		};
 		60D87A861735E67F009065A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				60D87A891735E866009065A3 /* Mole.png */,
+				60D87A8B1735EB64009065A3 /* baby.png */,
 				60D87A871735E68B009065A3 /* holey-moley-background@2x.png */,
 			);
 			name = Resources;
@@ -295,6 +284,7 @@
 				60D87A621735D489009065A3 /* OffersViewController.xib in Resources */,
 				60D87A881735E68B009065A3 /* holey-moley-background@2x.png in Resources */,
 				60D87A8A1735E866009065A3 /* Mole.png in Resources */,
+				60D87A8C1735EB64009065A3 /* baby.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +309,6 @@
 				60D87A7D1735D59C009065A3 /* AFURLConnectionOperation.m in Sources */,
 				60D87A7E1735D59C009065A3 /* AFXMLRequestOperation.m in Sources */,
 				60D87A7F1735D59C009065A3 /* UIImageView+AFNetworking.m in Sources */,
-				60D87A851735D77B009065A3 /* AFOAuth1Client.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

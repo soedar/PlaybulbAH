@@ -190,14 +190,12 @@ typedef enum {
     switch (boxState) {
         case BoxStateEmpty:
             [button setImage:nil forState:UIControlStateNormal];
-            button.backgroundColor = [UIColor clearColor];
             break;
         case BoxStateTarget:
             [button setImage:[UIImage imageNamed:@"Mole"] forState:UIControlStateNormal];
-            button.backgroundColor = [UIColor clearColor];
             break;
         case BoxStateDistraction:
-            button.backgroundColor = [UIColor blueColor];
+            [button setImage:[UIImage imageNamed:@"baby"] forState:UIControlStateNormal];
             break;
     }
 }

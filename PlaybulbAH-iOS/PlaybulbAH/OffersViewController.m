@@ -7,8 +7,6 @@
 //
 
 #import "OffersViewController.h"
-#import "AFNetworking.h"
-#import "AFOAuth1Client.h"
 
 @interface OffersViewController ()
 
@@ -30,17 +28,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-   
-    NSURL *url = [NSURL URLWithString:@"http://api.yelp.com/business_review_search?term=food&lat=37.776975&long=-122.4169947&ywsid=g-eXDxJYxb2gYNU_aHxnwg"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"");
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    [operation start];
 }
 
 - (void)didReceiveMemoryWarning
