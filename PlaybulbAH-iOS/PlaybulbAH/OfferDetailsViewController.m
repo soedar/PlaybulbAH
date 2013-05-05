@@ -60,6 +60,7 @@
     Firebase *newFbTransaction = [[[Firebase alloc] initWithUrl:@"https://playbulb.firebaseio.com/transactions"] childByAutoId];
 
     NSDictionary *transaction = @{@"comment": @"",
+                                  @"cardCode": [self cardCode],
                                   @"isClaimed": @(0),
                                   @"offerId": self.offer.offerID,
                                   @"timeStamp": @((int)[[NSDate date] timeIntervalSince1970])};
@@ -75,6 +76,23 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"AddMoreLives" object:@(self.offer.reward)];
     }];
+}
+
+- (NSString *)cardCode
+{
+    NSMutableString *cardCode = [NSMutableString string];
+    for (int i=0;i<3;i++) {
+        [cardCode appendFormat:@"%i", [self random4DigitNumber]];
+        if (i < 2) {
+            [cardCode appendString:@"-"];
+        }
+    }
+    return cardCode;
+}
+
+- (int) random4DigitNumber
+{
+    return (int) (arc4random() % 9000) + 1000;
 }
 
 @end
