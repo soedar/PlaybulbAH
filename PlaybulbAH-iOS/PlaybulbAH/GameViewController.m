@@ -50,6 +50,7 @@ typedef enum {
 @property (nonatomic) int lifeCount;
 @property (nonatomic, weak) IBOutlet UILabel *lifeLabel;
 
+@property (nonatomic, weak) IBOutlet UIButton *startButton;
 @end
 
 @implementation GameViewController
@@ -82,20 +83,32 @@ typedef enum {
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    NSString *message = [NSString stringWithFormat:@"Get %i target before %i seconds", TARGET_GOAL, GAME_DURATION/1000];
-    self.startAlertView = [[UIAlertView alloc] initWithTitle:@"Level 1"
-                                                     message:message
-                                                    delegate:self
-                                           cancelButtonTitle:@"Ok"
-                                           otherButtonTitles:nil];
-    [self.startAlertView show];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Button Action
+
+- (IBAction)startGameTapped:(id)sender
+{
+    if (self.lifeCount > 0) {
+        NSString *message = [NSString stringWithFormat:@"Get %i target before %i seconds", TARGET_GOAL, GAME_DURATION/1000];
+        self.startAlertView = [[UIAlertView alloc] initWithTitle:@"Level 1"
+                                                         message:message
+                                                        delegate:self
+                                               cancelButtonTitle:@"Ok"
+                                               otherButtonTitles:nil];
+        [self.startAlertView show];
+    }
+    else {
+        self.purchaseAlertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You have ran out of lives!" delegate:self cancelButtonTitle:@"Get more lives" otherButtonTitles:nil];
+        [self.purchaseAlertView show];
+    }
+    
 }
 
 #pragma mark - AlertView Delegate
@@ -118,6 +131,7 @@ typedef enum {
 
 - (void) startGame
 {
+    self.startButton.hidden = YES;
     self.scoreCount = 0;
     self.timeLeft = GAME_DURATION;
     [self updateLabels];
@@ -137,6 +151,7 @@ typedef enum {
 
 - (void) stopGame
 {
+    self.startButton.hidden = NO;
     [self.tickTimer invalidate];
     self.tickTimer = nil;
     
