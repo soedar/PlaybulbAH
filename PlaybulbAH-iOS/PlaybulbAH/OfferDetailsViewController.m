@@ -72,6 +72,8 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Purchase Complete" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"AddMoreLives" object:@(self.offer.reward)];
     }];
 }
 

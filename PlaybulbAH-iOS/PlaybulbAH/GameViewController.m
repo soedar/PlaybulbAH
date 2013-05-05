@@ -75,6 +75,8 @@ typedef enum {
     self.timeLeft = GAME_DURATION;
     [self updateGameTimerLabel];
     [self updateLabels];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLivesAfterPurchase:) name:@"AddMoreLives" object:nil];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -320,6 +322,14 @@ typedef enum {
     self.lifeLabel.text = [NSString stringWithFormat:@"%i", self.lifeCount];
 }
 
+#pragma mark - Notification
+
+- (void) addLivesAfterPurchase:(NSNotification*)notification
+{
+    int lives = [notification.object intValue];
+    self.lifeCount += lives;
+    [self updateLabels];
+}
 
 #pragma mark - Playbulb methds
 
