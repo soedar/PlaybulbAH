@@ -16,7 +16,7 @@ const CGFloat DEFAULT_TICK_DURATION = 0.18;
 const int MAX_DISTRACTIONS = 5;
 const int GAME_DURATION = 1000;
 const int TARGET_GOAL = 10;
-const int INITIAL_LIFE = 1;
+const int INITIAL_LIFE = 3;
 
 typedef enum {
     BoxStateEmpty,
@@ -127,9 +127,7 @@ typedef enum {
         [self startGame];
     }
     else if (alertView == self.endAlertView) {
-        if (buttonIndex == 0) {
-            [self startGame];
-        }
+//            [self startGame];
     }
     else if (alertView == self.purchaseAlertView) {
         // launch purchase vc
@@ -172,7 +170,7 @@ typedef enum {
         self.lifeCount--;
         
         if (self.lifeCount > 0) {
-            self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"-1 life" delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil];
+            self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"You did not meet your target moleys!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [self.endAlertView show];
         }
         else {
@@ -181,7 +179,7 @@ typedef enum {
         }
     }
     else {
-        self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"You did it! Improve your score!" delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil];
+        self.endAlertView = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:@"You did it! Improve your score!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [self.endAlertView show];
     }
     

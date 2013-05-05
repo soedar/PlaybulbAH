@@ -81,6 +81,8 @@
     
     cell.textLabel.text = offer.offerName;
     cell.detailTextLabel.text = offer.shortDescription;
+    NSString *imageName = [NSString stringWithFormat:@"%@.jpg", offer.vendorID];
+    [cell.imageView setImage:[UIImage imageNamed:imageName]];
     
     
     return cell;

@@ -49,6 +49,24 @@
 		60D87A9C17369E9D009065A3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D87A9B17369E9D009065A3 /* Transaction.m */; };
 		60D87A9E1736A678009065A3 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87A9D1736A678009065A3 /* lightbulb.png */; };
 		60D87AA11736C5DD009065A3 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA01736C5DD009065A3 /* heart@2x.png */; };
+		60D87AB51736D24A009065A3 /* adams-grub-truck-san-francisco-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA31736D24A009065A3 /* adams-grub-truck-san-francisco-2.jpg */; };
+		60D87AB61736D24A009065A3 /* ananda-fuara-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA41736D24A009065A3 /* ananda-fuara-san-francisco.jpg */; };
+		60D87AB71736D24A009065A3 /* asiasf-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA51736D24A009065A3 /* asiasf-san-francisco.jpg */; };
+		60D87AB81736D24A009065A3 /* bacon-bacon-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA61736D24A009065A3 /* bacon-bacon-san-francisco.jpg */; };
+		60D87AB91736D24A009065A3 /* bao-and-bowl-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA71736D24A009065A3 /* bao-and-bowl-san-francisco.jpg */; };
+		60D87ABA1736D24A009065A3 /* bossa-nova-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA81736D24A009065A3 /* bossa-nova-san-francisco.jpg */; };
+		60D87ABB1736D24A009065A3 /* brass-knuckle-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AA91736D24A009065A3 /* brass-knuckle-san-francisco.jpg */; };
+		60D87ABC1736D24A009065A3 /* fins-on-the-hoof-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAA1736D24A009065A3 /* fins-on-the-hoof-san-francisco.jpg */; };
+		60D87ABD1736D24A009065A3 /* foodie-adventures-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAB1736D24A009065A3 /* foodie-adventures-san-francisco.jpg */; };
+		60D87ABE1736D24A009065A3 /* garden-creamery-san-francisco-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAC1736D24A009065A3 /* garden-creamery-san-francisco-2.jpg */; };
+		60D87ABF1736D24A009065A3 /* hongry-kong-truck-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAD1736D24A009065A3 /* hongry-kong-truck-san-francisco.jpg */; };
+		60D87AC01736D24A009065A3 /* japacurry-truck-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAE1736D24A009065A3 /* japacurry-truck-san-francisco.jpg */; };
+		60D87AC11736D24A009065A3 /* moya-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AAF1736D24A009065A3 /* moya-san-francisco.jpg */; };
+		60D87AC21736D24A009065A3 /* mr-arroz-caldo-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AB01736D24A009065A3 /* mr-arroz-caldo-san-francisco.jpg */; };
+		60D87AC31736D24A009065A3 /* naked-chorizo-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AB11736D24A009065A3 /* naked-chorizo-san-francisco.jpg */; };
+		60D87AC41736D24A009065A3 /* off-the-grid-civic-center-san-francisco-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AB21736D24A009065A3 /* off-the-grid-civic-center-san-francisco-3.jpg */; };
+		60D87AC51736D24A009065A3 /* red-rooster-tacos-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AB31736D24A009065A3 /* red-rooster-tacos-san-francisco.jpg */; };
+		60D87AC61736D24A009065A3 /* tomkat-asian-street-food-truck-san-francisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60D87AB41736D24A009065A3 /* tomkat-asian-street-food-truck-san-francisco.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +134,24 @@
 		60D87A9D1736A678009065A3 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
 		60D87A9F1736C357009065A3 /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		60D87AA01736C5DD009065A3 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
+		60D87AA31736D24A009065A3 /* adams-grub-truck-san-francisco-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "adams-grub-truck-san-francisco-2.jpg"; path = "images/adams-grub-truck-san-francisco-2.jpg"; sourceTree = "<group>"; };
+		60D87AA41736D24A009065A3 /* ananda-fuara-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ananda-fuara-san-francisco.jpg"; path = "images/ananda-fuara-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AA51736D24A009065A3 /* asiasf-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "asiasf-san-francisco.jpg"; path = "images/asiasf-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AA61736D24A009065A3 /* bacon-bacon-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bacon-bacon-san-francisco.jpg"; path = "images/bacon-bacon-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AA71736D24A009065A3 /* bao-and-bowl-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bao-and-bowl-san-francisco.jpg"; path = "images/bao-and-bowl-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AA81736D24A009065A3 /* bossa-nova-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bossa-nova-san-francisco.jpg"; path = "images/bossa-nova-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AA91736D24A009065A3 /* brass-knuckle-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "brass-knuckle-san-francisco.jpg"; path = "images/brass-knuckle-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AAA1736D24A009065A3 /* fins-on-the-hoof-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "fins-on-the-hoof-san-francisco.jpg"; path = "images/fins-on-the-hoof-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AAB1736D24A009065A3 /* foodie-adventures-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "foodie-adventures-san-francisco.jpg"; path = "images/foodie-adventures-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AAC1736D24A009065A3 /* garden-creamery-san-francisco-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "garden-creamery-san-francisco-2.jpg"; path = "images/garden-creamery-san-francisco-2.jpg"; sourceTree = "<group>"; };
+		60D87AAD1736D24A009065A3 /* hongry-kong-truck-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hongry-kong-truck-san-francisco.jpg"; path = "images/hongry-kong-truck-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AAE1736D24A009065A3 /* japacurry-truck-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "japacurry-truck-san-francisco.jpg"; path = "images/japacurry-truck-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AAF1736D24A009065A3 /* moya-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "moya-san-francisco.jpg"; path = "images/moya-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AB01736D24A009065A3 /* mr-arroz-caldo-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "mr-arroz-caldo-san-francisco.jpg"; path = "images/mr-arroz-caldo-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AB11736D24A009065A3 /* naked-chorizo-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "naked-chorizo-san-francisco.jpg"; path = "images/naked-chorizo-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AB21736D24A009065A3 /* off-the-grid-civic-center-san-francisco-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "off-the-grid-civic-center-san-francisco-3.jpg"; path = "images/off-the-grid-civic-center-san-francisco-3.jpg"; sourceTree = "<group>"; };
+		60D87AB31736D24A009065A3 /* red-rooster-tacos-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "red-rooster-tacos-san-francisco.jpg"; path = "images/red-rooster-tacos-san-francisco.jpg"; sourceTree = "<group>"; };
+		60D87AB41736D24A009065A3 /* tomkat-asian-street-food-truck-san-francisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tomkat-asian-street-food-truck-san-francisco.jpg"; path = "images/tomkat-asian-street-food-truck-san-francisco.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +285,7 @@
 		60D87A861735E67F009065A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60D87AA21736D236009065A3 /* company images */,
 				60D87AA01736C5DD009065A3 /* heart@2x.png */,
 				60D87A891735E866009065A3 /* Mole.png */,
 				60D87A9D1736A678009065A3 /* lightbulb.png */,
@@ -256,6 +293,31 @@
 				60D87A871735E68B009065A3 /* holey-moley-background@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		60D87AA21736D236009065A3 /* company images */ = {
+			isa = PBXGroup;
+			children = (
+				60D87AA31736D24A009065A3 /* adams-grub-truck-san-francisco-2.jpg */,
+				60D87AA41736D24A009065A3 /* ananda-fuara-san-francisco.jpg */,
+				60D87AA51736D24A009065A3 /* asiasf-san-francisco.jpg */,
+				60D87AA61736D24A009065A3 /* bacon-bacon-san-francisco.jpg */,
+				60D87AA71736D24A009065A3 /* bao-and-bowl-san-francisco.jpg */,
+				60D87AA81736D24A009065A3 /* bossa-nova-san-francisco.jpg */,
+				60D87AA91736D24A009065A3 /* brass-knuckle-san-francisco.jpg */,
+				60D87AAA1736D24A009065A3 /* fins-on-the-hoof-san-francisco.jpg */,
+				60D87AAB1736D24A009065A3 /* foodie-adventures-san-francisco.jpg */,
+				60D87AAC1736D24A009065A3 /* garden-creamery-san-francisco-2.jpg */,
+				60D87AAD1736D24A009065A3 /* hongry-kong-truck-san-francisco.jpg */,
+				60D87AAE1736D24A009065A3 /* japacurry-truck-san-francisco.jpg */,
+				60D87AAF1736D24A009065A3 /* moya-san-francisco.jpg */,
+				60D87AB01736D24A009065A3 /* mr-arroz-caldo-san-francisco.jpg */,
+				60D87AB11736D24A009065A3 /* naked-chorizo-san-francisco.jpg */,
+				60D87AB21736D24A009065A3 /* off-the-grid-civic-center-san-francisco-3.jpg */,
+				60D87AB31736D24A009065A3 /* red-rooster-tacos-san-francisco.jpg */,
+				60D87AB41736D24A009065A3 /* tomkat-asian-street-food-truck-san-francisco.jpg */,
+			);
+			name = "company images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +385,24 @@
 				60D87A961736592D009065A3 /* OfferDetailsViewController.xib in Resources */,
 				60D87A9E1736A678009065A3 /* lightbulb.png in Resources */,
 				60D87AA11736C5DD009065A3 /* heart@2x.png in Resources */,
+				60D87AB51736D24A009065A3 /* adams-grub-truck-san-francisco-2.jpg in Resources */,
+				60D87AB61736D24A009065A3 /* ananda-fuara-san-francisco.jpg in Resources */,
+				60D87AB71736D24A009065A3 /* asiasf-san-francisco.jpg in Resources */,
+				60D87AB81736D24A009065A3 /* bacon-bacon-san-francisco.jpg in Resources */,
+				60D87AB91736D24A009065A3 /* bao-and-bowl-san-francisco.jpg in Resources */,
+				60D87ABA1736D24A009065A3 /* bossa-nova-san-francisco.jpg in Resources */,
+				60D87ABB1736D24A009065A3 /* brass-knuckle-san-francisco.jpg in Resources */,
+				60D87ABC1736D24A009065A3 /* fins-on-the-hoof-san-francisco.jpg in Resources */,
+				60D87ABD1736D24A009065A3 /* foodie-adventures-san-francisco.jpg in Resources */,
+				60D87ABE1736D24A009065A3 /* garden-creamery-san-francisco-2.jpg in Resources */,
+				60D87ABF1736D24A009065A3 /* hongry-kong-truck-san-francisco.jpg in Resources */,
+				60D87AC01736D24A009065A3 /* japacurry-truck-san-francisco.jpg in Resources */,
+				60D87AC11736D24A009065A3 /* moya-san-francisco.jpg in Resources */,
+				60D87AC21736D24A009065A3 /* mr-arroz-caldo-san-francisco.jpg in Resources */,
+				60D87AC31736D24A009065A3 /* naked-chorizo-san-francisco.jpg in Resources */,
+				60D87AC41736D24A009065A3 /* off-the-grid-civic-center-san-francisco-3.jpg in Resources */,
+				60D87AC51736D24A009065A3 /* red-rooster-tacos-san-francisco.jpg in Resources */,
+				60D87AC61736D24A009065A3 /* tomkat-asian-street-food-truck-san-francisco.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
